@@ -6,9 +6,18 @@ export function buildLoaders(options: buildOptions): ModuleOptions['rules'] {
     const scssLoader = {
         test: /\.[s|c][ac]?ss$/i,
         use: [
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            'css-loader',
-            'sass-loader',
+            {
+                loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            },
+            {
+                loader: 'css-loader',
+                options: {
+                    url: false,
+                }
+            },
+            {
+                loader: 'sass-loader',
+            }
         ],
     };
     const tsLoader = {
@@ -26,6 +35,6 @@ export function buildLoaders(options: buildOptions): ModuleOptions['rules'] {
 
     return [
         scssLoader,
-        tsLoader
+        tsLoader,
     ];
 }

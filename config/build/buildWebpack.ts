@@ -14,7 +14,7 @@ export function buildWebpack(options: buildOptions): webpack.Configuration {
         devtool: isDev && 'inline-source-map',
         output: {
             path: options.paths.output,
-            filename: '[name].[hash:8].js',
+            filename: '[name].js',
             clean: true
         },
         plugins: buildPlugins(options),

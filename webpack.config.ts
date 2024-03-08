@@ -11,7 +11,11 @@ export default (env: envVariables) => {
     const paths: buildPath = {
         output: path.resolve(__dirname, 'build'),
         entry: path.resolve(__dirname, 'src', 'app.ts'),
-        html: path.resolve(__dirname, 'public', 'index.html'),
+
+        html: {
+            index: path.resolve(__dirname, 'public', 'index.html'),
+        },
+
         public: path.resolve(__dirname, 'public'),
         src: path.resolve(__dirname, 'src'),
     };

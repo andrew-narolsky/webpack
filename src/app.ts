@@ -1,3 +1,3 @@
 import '@/app.scss';
 
-console.log('init');
+import '../public/js/script';
