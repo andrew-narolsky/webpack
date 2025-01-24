@@ -14,6 +14,7 @@ export default (env: envVariables) => {
 
         html: {
             index: path.resolve(__dirname, 'public', 'index.html'),
+            page: path.resolve(__dirname, 'public', 'page.html'),
         },
 
         public: path.resolve(__dirname, 'public'),
